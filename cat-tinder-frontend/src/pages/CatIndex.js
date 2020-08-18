@@ -6,6 +6,7 @@ import {
     Card, Button, CardImg, CardTitle, CardText, CardDeck,
     CardSubtitle, CardBody
   } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 class CatIndex extends Component{
     render(){
@@ -24,7 +25,8 @@ class CatIndex extends Component{
                                     <h4>{ cat.name }</h4>
                                 </CardTitle>
                                 <CardText>{ cat.enjoys }</CardText>
-                                <Button>Button</Button>
+                                <Button key={ index }><NavLink to={`/catshow/${cat.id}`}>learn more about { cat.name }</NavLink>
+                                </Button>                                
                                 </Card>
                             )
                         })}
