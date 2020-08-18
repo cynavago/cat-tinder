@@ -19,11 +19,11 @@ class CatIndex extends Component{
                         { this.props.cats.map((cat, index) => {
                             return (
                                 <Card body key={ index }>
-                                <CardImg top width="100%" src="https://i.redd.it/6xvh1f7btgl31.jpg" alt="Card image cap" />
+                                <CardImg top width="100%" src={ cat.image } alt="Card image cap" />
                                 <CardTitle>
                                     <h4>{ cat.name }</h4>
                                 </CardTitle>
-                                <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+                                <CardText>{ cat.enjoys }</CardText>
                                 <Button>Button</Button>
                                 </Card>
                             )
