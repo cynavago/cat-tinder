@@ -20,8 +20,8 @@ it('CatIndex renders without crashing', () => {
   })
 
 // This tests that state is working.
-it('CatIndex can access state', () => {
-  const catIndex = shallow(<CatIndex />)
-  expect(catIndex.find('h4').text()).toEqual('Mittens')
-})
+// it('CatIndex can access state', () => {
+//   const catIndex = shallow(<CatIndex />)
+//   expect(catIndex.find('h4').text()).toEqual('Mittens')
+// })
 

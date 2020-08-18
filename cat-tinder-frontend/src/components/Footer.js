@@ -5,8 +5,7 @@ class Footer extends Component{
     render(){
         return(
             <React.Fragment>
-                <h3>Footer</h3>
-                <Button><NavLink to={`/catindex`}>Home</NavLink></Button>
+                <NavLink style={{display:'flex', justifyContent:'center'}} to={`/catindex`}>See All Cats</NavLink>
             </React.Fragment>
         )
     }

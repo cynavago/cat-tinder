@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import CatEdit from './pages/CatEdit.js';
 import CatIndex from './pages/CatIndex.js';
 import CatNew from './pages/CatNew.js';
@@ -12,6 +11,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import './App.css';
 
 class App extends Component {
   constructor(props){

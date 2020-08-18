@@ -13,7 +13,7 @@ class CatShow extends Component{
         return(
             <React.Fragment>
                 <Header/>
-                <Card>
+                <Card style= {{width:"10%", height:"40%", margin:"auto"}}>
                     <CardImg top width="100%" src={ this.props.cat.image } alt="Card image cap" />
                     <CardTitle>
                         <h4>{ this.props.cat.name }</h4>
@@ -26,4 +26,5 @@ class CatShow extends Component{
         )
     }
 }
+// style={{marginRight: spacing + 'em'}}
 export default CatShow

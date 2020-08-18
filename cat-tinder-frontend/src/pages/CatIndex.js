@@ -5,22 +5,23 @@ import Footer from '../components/Footer.js';
 import {
     Card, Button, CardImg, CardTitle, CardText, CardDeck,
     CardSubtitle, CardBody
-  } from 'reactstrap';
+} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import '../App.css';
 
 class CatIndex extends Component{
     render(){
         return(
             <React.Fragment>
                 <Header />
-                    <h2>Meet the Cats!</h2>
+                    <h2 style={{display:'flex', justifyContent:'center'}}>Meet the Cats!</h2>
                     <br />
                     
                     <CardDeck>
                         { this.props.cats.map((cat, index) => {
                             return (
                                 <Card body key={ index }>
-                                <CardImg top width="100%" src={ cat.image } alt="Card image cap" />
+                                <CardImg style={{  objectFit:"cover"}}  src={ cat.image } alt="Cat Image" fluid />
                                 <CardTitle>
                                     <h4>{ cat.name }</h4>
                                 </CardTitle>
