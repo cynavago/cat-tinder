@@ -21,13 +21,16 @@ class App extends Component {
     }
   }
   render(){
-    console.log(this.state.cats)
+    // console.log(this.state.cats)
     return (
       <React.Fragment>
         <Router>
           <Switch>
             <Route exact path="/" component={ Home } />
-            <Route path="/catindex" component={ CatIndex } />
+            <Route 
+              path="/catindex" 
+              render={ (props) => <CatIndex cats={ this.state.cats } /> } 
+            />
             <Route path="/catshow/:id" component={ CatShow } />
             <Route path="/catnew" component={ CatNew } />
             <Route path="/catedit/:id" component={ CatEdit } />

@@ -16,6 +16,12 @@ let catData = [
         name: "Toast",
         age: 1,
         enjoys: "getting all the attention"
+    },
+    {
+        id: 4,
+        name: "Beans",
+        age: 12,
+        enjoys: "kinda gassy"
     }
 ]
 export default catData
