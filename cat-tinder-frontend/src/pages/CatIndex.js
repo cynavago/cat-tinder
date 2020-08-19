@@ -21,7 +21,7 @@ class CatIndex extends Component{
                         { this.props.cats.map((cat, index) => {
                             return (
                                 <Card body key={ index }>
-                                <CardImg style={{  objectFit:"cover"}}  src={ cat.image } alt="Cat Image" fluid />
+                                <CardImg style={{  objectFit:"cover"}}  src={ cat.image } alt="Cat Image" />
                                 <CardTitle>
                                     <h4>{ cat.name }</h4>
                                 </CardTitle>
