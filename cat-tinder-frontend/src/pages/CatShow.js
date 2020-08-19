@@ -18,7 +18,7 @@ class CatShow extends Component{
                     <CardTitle style={{display:'flex', justifyContent:'center'}}>
                         <h4>{ this.props.cat.name }</h4>
                     </CardTitle>
-                    <CardText style={{display:'flex', justifyContent:'center'}}>{ this.props.cat.enjoys }</CardText>
+                    <CardText style={{display:'flex', justifyContent:'center'}}>{ this.props.cat.story }</CardText>
                     <Button color="info">Purr-fect Match</Button> 
                     <br></br> 
                     <NavLink style={{display:'flex', justifyContent:'center'}} to={`/catedit/${this.props.cat.id}`}>
