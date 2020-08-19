@@ -19,7 +19,12 @@ class CatShow extends Component{
                         <h4>{ this.props.cat.name }</h4>
                     </CardTitle>
                     <CardText>{ this.props.cat.enjoys }</CardText>
-                    <Button>Purr-fect Match</Button>                                
+                    <Button color="primary">Purr-fect Match</Button>  
+                    <NavLink to={`/catedit/${this.props.cat.id}`}>
+                        <Button color="secondary">
+                            Edit Profile
+                        </Button>
+                    </NavLink>                              
                 </Card>
                 <Footer/>
             </React.Fragment>
