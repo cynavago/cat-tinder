@@ -13,18 +13,20 @@ class CatShow extends Component{
         return(
             <React.Fragment>
                 <Header/>
-                <Card style= {{width:"10%", height:"40%", margin:"auto"}}>
-                    <CardImg top width="100%" src={ this.props.cat.image } alt="Card image cap" />
-                    <CardTitle>
+                <Card style= {{width:"30%", height:"40%", margin:"auto"}}>
+                    <CardImg style={{height:"20%", width:"100%"}} src={ this.props.cat.image } alt="Card image cap" />
+                    <CardTitle style={{display:'flex', justifyContent:'center'}}>
                         <h4>{ this.props.cat.name }</h4>
                     </CardTitle>
-                    <CardText>{ this.props.cat.enjoys }</CardText>
-                    <Button color="primary">Purr-fect Match</Button>  
-                    <NavLink to={`/catedit/${this.props.cat.id}`}>
-                        <Button color="secondary">
+                    <CardText style={{display:'flex', justifyContent:'center'}}>{ this.props.cat.enjoys }</CardText>
+                    <Button color="info">Purr-fect Match</Button> 
+                    <br></br> 
+                    <NavLink style={{display:'flex', justifyContent:'center'}} to={`/catedit/${this.props.cat.id}`}>
+                        <Button  color="success">
                             Edit Profile
                         </Button>
-                    </NavLink>                              
+                    </NavLink>
+                    <br></br>                              
                 </Card>
                 <Footer/>
             </React.Fragment>

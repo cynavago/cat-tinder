@@ -22,11 +22,11 @@ class CatIndex extends Component{
                             return (
                                 <Card body key={ index }>
                                 <CardImg style={{  objectFit:"cover"}}  src={ cat.image } alt="Cat Image" />
-                                <CardTitle>
+                                <CardTitle style={{display:'flex', justifyContent:'center'}}>
                                     <h4>{ cat.name }</h4>
                                 </CardTitle>
-                                <CardText>{ cat.enjoys }</CardText>
-                                <Button key={ index }><NavLink to={`/catshow/${cat.id}`}>learn more about { cat.name }</NavLink>
+                                <CardText style={{display:'flex', justifyContent:'center'}} >{ cat.enjoys }</CardText>
+                                <Button color = "info" key={ index }><NavLink style ={{color:"white"}} to={`/catshow/${cat.id}`}>learn more about { cat.name }</NavLink>
                                 </Button>                                
                                 </Card>
                             )
