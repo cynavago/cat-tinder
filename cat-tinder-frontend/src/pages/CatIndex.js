@@ -12,12 +12,13 @@ import '../App.css';
 class CatIndex extends Component{
     render(){
         return(
-            <React.Fragment>
-                <Header />
-                    <h2 style={{display:'flex', justifyContent:'center'}}>Meet the Cats!</h2>
+            <>
+            <Header />
+                <div id="backgroundBody">
+                    <h2 style={{display:'flex', justifyContent:'center', padding:'16px', paddingTop:'32px'}}>Meet the Cats!</h2>
                     <br />
                     
-                    <CardDeck>
+                    <CardDeck style={{margin:"50px", marginTop:"0px"}}>
                         { this.props.cats.map((cat, index) => {
                             return (
                                 <Card body key={ index }>
@@ -34,7 +35,8 @@ class CatIndex extends Component{
                     </CardDeck>
 
                 <Footer />
-            </React.Fragment>
+            </div>
+            </>
         )
     }
 }

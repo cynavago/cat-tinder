@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet');
 
 
-h1, p, h2 {
+h1, h2 {
   font-family: 'Great Vibes', cursive;
 }
 
+#backgroundBody {
+  background: rgb(255,174,228);
+  background: linear-gradient(311deg, rgba(255,174,228,1) 16%, rgba(232,150,94,1) 72%);
+}

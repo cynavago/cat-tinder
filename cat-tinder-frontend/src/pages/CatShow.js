@@ -13,7 +13,7 @@ class CatShow extends Component{
         return(
             <React.Fragment>
                 <Header/>
-                <Card style= {{width:"30%", height:"40%", margin:"auto"}}>
+                <Card style= {{width:"30%", height:"40%", margin:"auto", marginTop:"32px", marginBottom:"32px", padding:"16px"}}>
                     <CardImg style={{height:"20%", width:"100%"}} src={ this.props.cat.image } alt="Card image cap" />
                     <CardTitle style={{display:'flex', justifyContent:'center'}}>
                         <h4>{ this.props.cat.name }</h4>
