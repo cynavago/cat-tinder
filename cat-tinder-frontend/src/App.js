@@ -74,6 +74,7 @@ class App extends Component {
     })
   }
 
+  //delete cat method, retrieves id of cat and passes the delete method on it
   deleteCat = (id) => {
     return fetch(`http://localhost:3000/cats/${id}`, {
       headers: {
@@ -83,9 +84,11 @@ class App extends Component {
     })
     .then(response => {
       if(response.status === 200){
-        return response
+        this.componentDidMount()
       }
-    }).catch(errors => {
+      return response
+    })
+    .catch(errors => {
       console.log("delete errors:", errors)
     })
   }
@@ -112,8 +115,8 @@ class App extends Component {
                 // strict equality to ensure clean usable data
                 let cat = this.state.cats.find(cat => cat.id === parseInt(id))
                 return (
-                  // Component call that will show the specific cat.
-                  <CatShow cat={ cat }
+                  // Component call that will show the specific cat. Added the deleteCat method from above in the route. The show page now has access to deleteCat method. Passes deleteCat to CatShow.
+                  <CatShow cat={ cat } deleteCat={ this.deleteCat }
                   />
                 )
               }} 
