@@ -57,10 +57,39 @@ class App extends Component {
     })
   }
 
-  editCat = (editcat, id) => {
-    console.log("editcat:", editcat)
-    console.log("id:", id)
+  editCat = (editCat, id) => {
+    return fetch(`http://localhost:3000/cats/${id}`, {
+      body: JSON.stringify(editCat),
+      headers: { "Content-Type": "application/json" },
+      method: "PATCH"
+    })
+    .then(response => {
+      if(response.status === 200){
+        this.componentDidMount()
+      }
+      return response
+    })
+    .catch(errors => {
+      console.log("edit errors", errors);
+    })
   }
+
+  deleteCat = (id) => {
+    return fetch(`http://localhost:3000/cats/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      if(response.status === 200){
+        return response
+      }
+    }).catch(errors => {
+      console.log("delete errors:", errors)
+    })
+  }
+
   // lifecycle method 2
   render(){
     // console.log(this.state.cats)
@@ -106,7 +135,15 @@ class App extends Component {
                 )
               }}
             />
-
+            {/* <Route path={"/catshow/:id"}
+              render={ (props) => {
+              let id = props.match.params.id
+              let cat = this.props.state.find(cat => cat.id === parseInt(id))
+              return (
+              <CatShow cats={ cat } deleteCat={ this.deleteCat }/>
+              )
+              }}
+            /> */}
             <Route component={ NotFound }/>
           </Switch>
         </Router>
