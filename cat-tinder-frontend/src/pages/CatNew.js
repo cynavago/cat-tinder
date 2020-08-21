@@ -70,6 +70,24 @@ class CatNew extends Component{
                         value={ this.state.form.enjoys }
                         />
                     </FormGroup>
+                    <FormGroup>
+                        <Label>Story</Label>
+                        <Input
+                        type="text"
+                        name="story"
+                        onChange={ this.handleChange }
+                        value={ this.state.form.story }
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Image</Label>
+                        <Input
+                        type="text"
+                        name="image"
+                        onChange={ this.handleChange }
+                        value={ this.state.form.image }
+                        />
+                    </FormGroup>
                     <Button
                         name="submit"
                         color="secondary"

@@ -5,7 +5,8 @@ import CatNew from './pages/CatNew.js';
 import CatShow from './pages/CatShow.js';
 import Home from './pages/Home.js';
 import NotFound from './pages/NotFound.js';
-import catData from './mockCats.js';
+// commenting this out since we are connecting to backend database
+// import catData from './mockCats.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -14,22 +15,53 @@ import {
 import './App.css';
 
 class App extends Component {
+  // lifecycle method1
   constructor(props){
     super(props)
     this.state = {
-      cats: catData
+      // empty array instead of mock cats
+      cats: []
     }
   }
+  // lifecycle method 3: after render
+  componentDidMount(){
+    // fetch takes argument of location (url). cats since we're following restful routes. 
+    fetch("http://localhost:3000/cats")
+    //.then is a HOF that takes in a response
+    .then(response => {
+      if(response.status === 200){
+        return response.json()
+      }
+    }).then(catsArray => {
+      this.setState({ cats: catsArray })
+    }).catch(errors => {
+        console.log("index errors:", errors)
+    })
+  }
 
-  createNewCat = (newcat) => {
-    console.log(newcat)
+  // fetch call to make post
+  createNewCat = (newCat) => {
+    return fetch("http://localhost:3000/cats", {
+      body: JSON.stringify(newCat),
+      headers: { "Content-Type": "application/json" },
+      method: "POST"
+    }).then(response => {
+      // if the response is good, it will reload the cats
+      if(response.status === 200){
+        this.componentDidMount()
+      }
+      return response
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
   }
 
   editCat = (editcat, id) => {
     console.log("editcat:", editcat)
     console.log("id:", id)
   }
-
+  // lifecycle method 2
   render(){
     // console.log(this.state.cats)
     return (
