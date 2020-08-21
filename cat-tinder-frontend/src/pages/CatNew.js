@@ -17,7 +17,9 @@ class CatNew extends Component{
             form: {
                 name: "",
                 age: "",
-                enjoys: ""
+                enjoys: "",
+                story: "",
+                image: ""
             },
             success: false
         }

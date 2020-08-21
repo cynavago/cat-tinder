@@ -9,7 +9,7 @@ import {
     Button
 } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
- 
+
 class CatEdit extends Component{
     constructor(props){
         super(props)
@@ -17,7 +17,9 @@ class CatEdit extends Component{
                 form:{
                     name: "",
                     age: "",
-                    enjoys: ""
+                    enjoys: "",
+                    story: "",
+                    image: ""
             },
             success: false
         }
@@ -70,7 +72,25 @@ class CatEdit extends Component{
                         value={ this.state.form.enjoys }
                         />
                     </FormGroup>
-                    <Button 
+                    <FormGroup>
+                        <Label>Story</Label>
+                        <Input
+                        type="text"
+                        name="story"
+                        onChange={ this.handleChange }
+                        value={ this.state.form.story }
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Image</Label>
+                        <Input
+                        type="text"
+                        name="image"
+                        onChange={ this.handleChange }
+                        value={ this.state.form.image }
+                        />
+                    </FormGroup>
+                    <Button
                         name="submit"
                         color="secondary"
                         onClick={ this.handleSubmit }
