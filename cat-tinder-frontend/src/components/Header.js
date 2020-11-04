@@ -5,8 +5,7 @@ class Header extends Component {
     render(){
         return(
             <React.Fragment>
-                <Jumbotron fluid style={{backgroundImage: "url(https://i.imgur.com/2KRePSO.jpg)", backgroundSize:'cover',
-                margin: '0px'}}>
+                <Jumbotron className="header-hero" fluid>
                     <Container fluid>
                     <div style={{marginLeft:"50px"}}>
                         <h1 className="display-3">Cat Tinder </h1>
