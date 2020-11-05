@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavBar from './components/NavBar'
 import CatEdit from './pages/CatEdit.js';
 import CatIndex from './pages/CatIndex.js';
 import CatNew from './pages/CatNew.js';
@@ -30,6 +31,7 @@ class App extends Component {
     //.then is a HOF that takes in a response
     .then(response => {
       if(response.status === 200){
+        console.log("CDM response status", response.status);
         return response.json()
       }
     }).then(catsArray => {
@@ -40,9 +42,9 @@ class App extends Component {
   }
 
   // fetch call to make post
-  createNewCat = (newCat) => {
+  createNewCat = (newcat) => {
     return fetch("http://localhost:3000/cats", {
-      body: JSON.stringify(newCat),
+      body: JSON.stringify(newcat),
       headers: { "Content-Type": "application/json" },
       method: "POST"
     }).then(response => {
@@ -50,6 +52,7 @@ class App extends Component {
       if(response.status === 200){
         this.componentDidMount()
       }
+      console.log("CreateNewCat response status:", response.status);
       return response
     })
     .catch(errors => {
@@ -58,15 +61,19 @@ class App extends Component {
   }
 
   editCat = (editCat, id) => {
+    console.log("editCat:", editCat, "id:", id);
     return fetch(`http://localhost:3000/cats/${id}`, {
       body: JSON.stringify(editCat),
       headers: { "Content-Type": "application/json" },
       method: "PATCH"
     })
     .then(response => {
-      if(response.status === 200){
+      if(response.status === 204){
         this.componentDidMount()
+      }else {
+        alert("update unsuccesful") 
       }
+      console.log("editCat response status:", response.status);
       return response
     })
     .catch(errors => {
@@ -83,9 +90,10 @@ class App extends Component {
       method: "DELETE"
     })
     .then(response => {
-      if(response.status === 200){
+      if(response.status === 204){
         this.componentDidMount()
       }
+      console.log("DeleteCat response status:", response.status);
       return response
     })
     .catch(errors => {
@@ -96,14 +104,22 @@ class App extends Component {
   // lifecycle method 2
   render(){
     // console.log(this.state.cats)
+    console.log("Create New Cat:", this.createNewCat)
     return (
       <React.Fragment>
         <Router>
+          <NavBar />
           <Switch>
-            <Route exact path="/" component={ Home } />
+            <Route 
+              exact path="/" 
+              component={ Home } 
+            />
             <Route 
               path="/catindex" 
-              render={ (props) => <CatIndex cats={ this.state.cats } /> } 
+              render={ (props) => 
+              <CatIndex 
+                cats={ this.state.cats } 
+              /> } 
             />
             <Route 
             // This retrieves a specific cat to show from our database.
@@ -116,37 +132,34 @@ class App extends Component {
                 let cat = this.state.cats.find(cat => cat.id === parseInt(id))
                 return (
                   // Component call that will show the specific cat. Added the deleteCat method from above in the route. The show page now has access to deleteCat method. Passes deleteCat to CatShow.
-                  <CatShow cat={ cat } deleteCat={ this.deleteCat }
+                  <CatShow 
+                    cat={ cat } 
+                    deleteCat={ this.deleteCat }
                   />
                 )
               }} 
             />
             <Route 
-              path="/catnew" 
-              render={ (props) => <CatNew createNewCat={ this.createNewCat }/> }
-            />
-            <Route 
+              path="/catnew"
+              render={ (props) => 
+                <CatNew 
+                  createNewCat={ this.createNewCat }
+                  /> 
+                }
+                />
+            <Route
               exact path= {"/catedit/:id"}
               render={ (props ) => {
                 let id = props.match.params.id
                 let cat = this.state.cats.find(cat => cat.id === parseInt(id))
                 return(
                   <CatEdit
-                    editCat={ this.editCat }
                     cat={ cat }
+                    editCat={ this.editCat }
                   />
                 )
               }}
             />
-            {/* <Route path={"/catshow/:id"}
-              render={ (props) => {
-              let id = props.match.params.id
-              let cat = this.props.state.find(cat => cat.id === parseInt(id))
-              return (
-              <CatShow cats={ cat } deleteCat={ this.deleteCat }/>
-              )
-              }}
-            /> */}
             <Route component={ NotFound }/>
           </Switch>
         </Router>

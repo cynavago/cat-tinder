@@ -29,7 +29,6 @@ class CatShow extends Component{
     render(){
         return(
             <React.Fragment>
-                <Header/>
                 <div id="backgroundBody">
                 <h2 style={{ display:'flex', justifyContent:'center', padding:'16px', paddingTop:'32px' }}>Meet {this.props.cat.name} </h2>
                     <Card style= {{width:"30%", height:"40%", margin:"auto", marginTop:"32px", marginBottom:"32px", padding:"16px"}}>
