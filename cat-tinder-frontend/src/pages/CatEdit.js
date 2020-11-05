@@ -15,11 +15,11 @@ class CatEdit extends Component{
         super(props)
             this.state = {
                 form:{
-                    name: "",
-                    age: "",
-                    enjoys: "",
-                    story: "",
-                    image: ""
+                    name: this.props.cat.name,
+                    age: this.props.cat.age,
+                    enjoys: this.props.cat.enjoys,
+                    story: this.props.cat.story,
+                    image: this.props.cat.image
             },
             success: false
         }
@@ -95,7 +95,7 @@ class CatEdit extends Component{
                         color="secondary"
                         onClick={ this.handleSubmit }
                         >
-                            Edit Cat Profile
+                            Edit profile
                     </Button>
                 </Form>
                 <Footer/>
