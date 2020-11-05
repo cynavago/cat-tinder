@@ -1,10 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 h1, h2 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'PT Sans', sans-serif;
+  /* font-weight: 700; */
+  font-weight: bold;
 }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.8rem;
+}
+
 
 #backgroundBody {
   background: rgb(255,174,228);

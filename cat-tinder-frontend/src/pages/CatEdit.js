@@ -43,7 +43,6 @@ class CatEdit extends Component{
     render(){
         return(
             <React.Fragment>
-                <Header/>
                 <Form>
                     <FormGroup>
                         <Label>Name</Label>

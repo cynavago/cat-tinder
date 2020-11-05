@@ -1,26 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.header-hero{
-  background-image: url("./assets/hero.jpg");
-  margin-bottom: 0px;
+
+.btn{
+  outline: none;
+}
+
+.btn-primary{
+  border-radius: 3rem;
+  background-image: linear-gradient(30deg, #f1645a, #ee3f91);
+  outline: none;
+  color: white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.container{
+  background-image: url("/assets/hero-bg.jpg");
+}
+
+.hero-copy{
+  padding-left: 5%;
+}
+
+.hero-image{
+  height: 70vh;
+  float: right;
+  padding-right: 5%;
+}
+
+.hero-title{
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  padding-top: 9%;
 }
 
 .jumbotron{
-  height: 100vh;
+  height: 80vh;
   margin-bottom: 0; 
+  background-image: url("/assets/hero-bg.jpg");
 }
 
-.nav-title{
+.jumbotron-bg{
+  background-image: url("/assets/hero-bg.jpg");
+}
+
+.navbar-left{
+  padding-left: 5%;
+}
+
+.navbar-links{
   color: red;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-right{
+  padding-right: 5%;
 }
