@@ -14,7 +14,7 @@ class Header extends Component {
             <React.Fragment>
                 <Jumbotron style={{ backgroundColor:'#fff'}} fluid>
                     <Container fluid>
-                        <Media className="hero-image" src={image} alt="Cat in front of blue gradient" />
+                        <Media className="hero-image" src={image} alt="Cat in front of pink gradient" />
                     <div className="hero-copy">
                         <h1 className="hero-title">Meow & Furever</h1>
                         <p> Find your purr-fect match</p>

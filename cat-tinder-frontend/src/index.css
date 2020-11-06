@@ -15,12 +15,17 @@ code {
   color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
 .container{
   background-image: url("/assets/hero-bg.jpg");
+}
+
+.h2-title{
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
 }
 
 .hero-copy{
@@ -30,14 +35,47 @@ code {
 .hero-image{
   height: 70vh;
   float: right;
-  padding-right: 5%;
+  padding-right: 7%;
 }
 
 .hero-title{
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 5rem;
+  font-size: 5.5rem;
   padding-top: 9%;
+}
+
+.home-text{
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 50%;
+}
+
+.index-cards{
+  width: 80%;
+  padding: 10%;
+  margin: auto;
+}
+
+.index-text{
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding-bottom: 5%;
+}
+
+.index-title{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  padding-top: 9%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .jumbotron{
@@ -64,3 +102,9 @@ code {
 .navbar-right{
   padding-right: 5%;
 }
+
+
+
+
+
+
