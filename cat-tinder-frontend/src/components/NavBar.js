@@ -7,7 +7,9 @@ import {
     Nav,
     NavItem,
     NavLink,
+    Media
   } from 'reactstrap';
+  import image from "../assets/logo.png"
 
 const links = [
     { href: '/', text: 'Home' },
@@ -16,9 +18,9 @@ const links = [
 ];
 
 const createNavItem = ({ href, text, className }) => (
-    <NavItem>
-      <NavLink href={href} className={className}>{text}</NavLink>
-    </NavItem>
+    <NavLink href={href} className={className}>
+        <div className="navbar-links"> {text} </div>
+    </NavLink>
 );
 
 class NavBar extends Component {
@@ -41,11 +43,13 @@ class NavBar extends Component {
         return(
             <React.Fragment>
                 <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">reactstrap</NavbarBrand>
+                    <NavbarBrand className="navbar-left" href="/">
+                        <Media className="logo" src={image} alt="Meow and Furever logo" />
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                        {links.map(createNavItem)}
+                    <Collapse className="navbar-right" isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto">
+                            {links.map(createNavItem)}
                         </Nav>
                     </Collapse>
                 </Navbar>

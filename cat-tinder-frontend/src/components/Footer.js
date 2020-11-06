@@ -1,23 +1,73 @@
 import React, { Component } from 'react';
-import { Button, Navbar, NavItem } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import {
+    Button,
+    Card,
+    CardImg,
+    NavItem,
+    Nav,
+    NavLink,
+    Container,
+    Row,
+    Col,
+    UncontrolledTooltip
+  } from "reactstrap";
+// import { NavLink } from 'react-router-dom';
 class Footer extends Component{
     render(){
         return(
             <React.Fragment>
-                <Navbar  expand="md" style={{ display:'flex', justifyContent:'center', margin:'auto', color:'#fc8200', width:'50%'}}>
-                    <NavItem style={{margin:'auto'}}>
-                        <NavLink to={`/`}>Home</NavLink>
-                    </NavItem>
-                    <br/>
-                    <NavItem style={{margin:'auto'}}>
-                        <NavLink to={`/catindex`}>All Cats</NavLink>
-                    </NavItem>
-                    <br/>
-                    <NavItem style={{margin:'auto'}}>
-                        <NavLink to={`/catnew`}>Add a Cat</NavLink>
-                    </NavItem>
-                </Navbar>
+            <Container>
+             <Row className="align-items-center justify-content-md-between">
+              <Col md="6">
+                <div className="copyright">
+                  © {new Date().getFullYear()}{" "}
+                  <a
+                    href="https://www.creative-tim.com?ref=adsr-footer"
+                    target="_blank"
+                  >
+                    Creative Tim
+                  </a>
+                  .
+                </div>
+              </Col>
+              <Col md="6">
+                <Nav className="nav-footer justify-content-end">
+                  <NavItem>
+                    <NavLink
+                      href="https://www.creative-tim.com?ref=adsr-footer"
+                      target="_blank"
+                    >
+                      Creative Tim
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      href="https://www.creative-tim.com/presentation?ref=adsr-footer"
+                      target="_blank"
+                    >
+                      About Us
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      href="http://blog.creative-tim.com?ref=adsr-footer"
+                      target="_blank"
+                    >
+                      Blog
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
+                      href="https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md"
+                      target="_blank"
+                    >
+                      MIT License
+                    </NavLink>
+                  </NavItem>
+                </Nav>
+              </Col>
+            </Row>
+          </Container>
             </React.Fragment>
         )
     }

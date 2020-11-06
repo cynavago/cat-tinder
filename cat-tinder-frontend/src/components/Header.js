@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
-import { Jumbotron, Container} from 'reactstrap'
+import { 
+    Jumbotron, 
+    Container,
+    Media,
+    Button,
+    NavLink
+} from 'reactstrap';
+import image from "../assets/hero-2.png"
 
 class Header extends Component {
     render(){
         return(
             <React.Fragment>
-                <Jumbotron className="header-hero" fluid>
+                <Jumbotron style={{ backgroundColor:'#fff'}} fluid>
                     <Container fluid>
-                    <div style={{marginLeft:"50px"}}>
-                        <h1 className="display-3">Cat Tinder </h1>
-                        <p className="lead" style={{marginTop:"30px", marginBottom:"0px", fontWeight:"600"}}> It's Tinder. For Cats.</p>
+                        <Media className="hero-image" src={image} alt="Cat in front of pink gradient" />
+                    <div className="hero-copy">
+                        <h1 className="hero-title">Meow & Furever</h1>
+                        <p> Find your purr-fect match</p>
+                        <br></br>
+                        <Button className="btn-primary">                            
+                            <NavLink className="btn-primary" href="/catindex">Find my match</NavLink>
+                        </Button>
                     </div>
                     </Container>
                 </Jumbotron>
