@@ -4,6 +4,7 @@ import CatEdit from './pages/CatEdit.js';
 import CatIndex from './pages/CatIndex.js';
 import CatNew from './pages/CatNew.js';
 import CatShow from './pages/CatShow.js';
+import CatFavorite from './pages/CatFavorite.js';
 import Home from './pages/Home.js';
 import NotFound from './pages/NotFound.js';
 // commenting this out since we are connecting to backend database
@@ -21,9 +22,21 @@ class App extends Component {
     super(props)
     this.state = {
       // empty array instead of mock cats
-      cats: []
+      cats: [],
+      faveCats: []
     }
   }
+
+  faveCatsValue = (id) => {
+    console.log("favorite Cats:", id);
+    fetch(`http://localhost:3000/cats/${id}`)
+
+    let faveCatsArr = this.state.faveCats
+    faveCatsArr.push(parseInt(id))
+
+    this.setState({ faveCats: faveCatsArr})
+  }
+ 
   // lifecycle method 3: after render
   componentDidMount(){
     // fetch takes argument of location (url). cats since we're following restful routes. 
@@ -40,6 +53,8 @@ class App extends Component {
         console.log("index errors:", errors)
     })
   }
+
+
 
   // fetch call to make post
   createNewCat = (newcat) => {
@@ -102,15 +117,8 @@ class App extends Component {
   }
 
   // lifecycle method 2
-  render(){
-    const {
-      logged_in,
-      sign_in_route,
-      sign_out_route,
-      current_user
-    } = this.props
-  
-    console.log("current_user:", current_user);
+  render(){  
+    console.log("state:", this.state.faveCats);
     return (
       <React.Fragment>
         <Router>
@@ -118,13 +126,16 @@ class App extends Component {
           <Switch>
             <Route 
               exact path="/" 
-              component={ Home } 
+              component={ Home }
+              faveCatsValue = {this.faveCatsValue}
             />
             <Route 
               path="/catindex" 
               render={ (props) => 
               <CatIndex 
                 cats={ this.state.cats } 
+                faveCats = {this.state.faveCats}
+                faveCatsValue = {this.faveCatsValue}
               /> } 
             />
             <Route 
@@ -141,6 +152,28 @@ class App extends Component {
                   <CatShow 
                     cat={ cat } 
                     deleteCat={ this.deleteCat }
+                    faveCats = {this.state.faveCats}
+                    faveCatsValue = {this.faveCatsValue}
+                  />
+                )
+              }} 
+            />
+            <Route 
+              // This retrieves a specific cat to show from our database.
+              path="/favorites" 
+              // render taking in props to use data from state.
+              render={ (props) => {
+                let id = props.match.params.id
+                // matching the id in the url with the id located in state.
+                // strict equality to ensure clean usable data
+                // let id = this.state.faveCats.map(id => id)
+                let cat = this.state.cats.find(cat => cat.id === parseInt(id))
+                return (
+                  // Component call that will show the specific cat. Added the deleteCat method from above in the route. The show page now has access to deleteCat method. Passes deleteCat to CatShow.
+                  <CatFavorite
+                    cat={ cat }
+                    faveCats = {this.state.faveCats}
+                    faveCatsValue = {this.faveCatsValue}
                   />
                 )
               }} 

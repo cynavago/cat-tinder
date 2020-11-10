@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import {
-    Card, Button, CardImg, CardTitle, CardText, CardDeck,
-    CardSubtitle, CardBody, Row
-  } from 'reactstrap';
-import { NavLink, Route, Redirect } from 'react-router-dom';
-import CatIndex from './CatIndex.js';
+    Card, 
+    Button, 
+    CardImg, 
+    CardTitle, 
+    CardText, 
+    Row
+} from 'reactstrap';
+import { NavLink, Redirect } from 'react-router-dom';
 
 class CatShow extends Component{
     constructor(props){
         super(props)
             this.state = {
-            success: false
+            success: false,
+            image: false
         }
     }
 
@@ -26,7 +29,17 @@ class CatShow extends Component{
         this.setState({ success: true })
     }
 
+    handleClick = (e) => {
+        e.preventDefault()
+        this.props.faveCatsValue(this.props.cat.id)
+        this.setState({ success: true })
+    }
+
+
+
     render(){
+        console.log("image true or false:", this.state.image);
+        console.log("state:", this.props.faveCats);
         return(
             <React.Fragment>
                     <div>
@@ -37,18 +50,27 @@ class CatShow extends Component{
                             <CardTitle style={{ display:'flex', justifyContent:'center'}} className="show-title">{ this.props.cat.name }</CardTitle>
                             <CardText className="index-text" style={{display:'flex', justifyContent:'center'}}>{ this.props.cat.story }</CardText>
                             <CardText style={{display:'flex', justifyContent:'center'}}>{ this.props.cat.enjoys }</CardText>
-
-                            <Button style={{ borderColor:'#ffffff'}} className="btn-secondary">Purr-fect Match</Button> 
+                            {/* <Button 
+                                style={{ borderColor:'#ffffff'}} 
+                                className="btn-secondary"
+                                onClick = { this.handleClick }
+                            >
+                                Purr-fect Match
+                            </Button>  */}
                             <br></br> 
-                            <Row style={{display:'flex', justifyContent:'center'}} >
-                                <NavLink to={`/catedit/${this.props.cat.id}`}>
-                                    <Button style={{margin:"5px"}} color="info">
+                            <Row style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}} >
+                                <NavLink style={{paddingRight:"2%"}} to={`/catedit/${this.props.cat.id}`}>
+                                    <Button 
+                                        style={{ borderColor:'#ffffff'}} 
+                                        className="btn-secondary"
+                                    >
                                         Edit Profile
                                     </Button>
                                 </NavLink>
-                                <NavLink style={{margin:"5px"}} to={"/catindex"}>
+                                <NavLink style={{paddingLeft:"2%"}} to={"/catindex"}>
                                     <Button 
-                                        color="danger"
+                                        style={{ borderColor:'#ffffff'}} 
+                                        className="btn-secondary"
                                         //added an onClick on button
                                         onClick={ this.handleSubmit }
                                     >
@@ -59,6 +81,7 @@ class CatShow extends Component{
                             <br></br>                              
                         </Card>
                     </Row>
+                    
                 <Footer/>
                 </div>
                 { this.state.success && <Redirect to={"/catindex"}/> }

@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { 
     Jumbotron, 
     Container,
-    Media,
     Button,
     NavLink,
-    Card,
     Row,
-    Col
+    Media
 } from 'reactstrap';
-import image from "../assets/hero-2.png";
+import hero from "../assets/hero-2.png";
 import iphone from "../assets/iphone.png"
 
 
@@ -27,7 +25,7 @@ class Header extends Component {
                                     <NavLink className="btn-text" href="/catindex">Find my match</NavLink>
                                 </Button>
                             </div>
-                            <img src={image} className="hero-image" style={{display:'flex'}} alt="Cat in front of pink gradient"/>
+                            <img src={hero} className="hero-image" style={{display:'flex'}} alt="Cat in front of pink gradient"/>
                         </Row>
                     </Container>
                 </Jumbotron>
@@ -40,7 +38,10 @@ class Header extends Component {
                     <div>
                         <p className="home-text">Here your frolicking feline friend has a chance to strut their stuff. Make sure to put your best paw forward. </p>
                     </div>
-                    <img src={iphone}/>
+                    <Media >                    
+                        <img className="header-content-image" src={iphone} alt="iphone with screenshot of cat app"/>
+                    </Media>
+
                 </Container>
             </React.Fragment>
         )
