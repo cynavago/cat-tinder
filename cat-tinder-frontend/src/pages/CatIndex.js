@@ -17,17 +17,16 @@ class CatIndex extends Component{
             <h2 className="h2-title" style={{display:'flex', justifyContent:'center'}}>Meet the Cats!</h2>
                 <br/>
                 <Container classname="index-cards">
-                    <Row xs="1" sm="2" md="3">
+                    <Row xs="1" sm="2" md="3" lg="4">
                         {this.props.cats.map((cat, index) =>{
                         return(
-                        <Col style={{padding:"8px", margin:"auto"}}>
-                            <Card body key={ index }>
-                                <CardImg style={{  objectFit:"cover"}}  src={ cat.image } alt="Cat Image" />
-                                <CardTitle className="index-title">
-                                    { cat.name }
-                                </CardTitle>
-                                <p className="index-text">{ cat.enjoys } </p>
-                                <Button color = "info" key={ index }><NavLink style ={{color:"white"}} to={`/catshow/${cat.id}`}>learn more about { cat.name }</NavLink>
+                        <Col style={{padding:"1.5%", margin:"auto"}}>
+                            <Card className="card-shadow" style={{border:'none'}} body key={ index }>
+                                <CardImg style={{  objectFit:"cover"}} src={ cat.image } alt="Cat Image" />
+                                <CardTitle className="index-title">{ cat.name }, { cat.age }</CardTitle>
+                                <p className="index-text">{ cat.story } </p>
+                                <Button key={ index } className="btn-secondary" style={{ borderColor:'#ffffff'}}>                            
+                                    <NavLink className="btn-text" to={`/catshow/${cat.id}`}>Learn more</NavLink>
                                 </Button>
                             </Card>
                         </Col>

@@ -42,8 +42,9 @@ class CatEdit extends Component{
 
     render(){
         return(
-            <React.Fragment>
-                <Form>
+            <>
+                 <h2 className="h2-title" style={{display:'flex', justifyContent:'center'}}>Edit {this.props.cat.name}'s' profile</h2>
+                <Form className="form">
                     <FormGroup>
                         <Label>Name</Label>
                         <Input
@@ -51,6 +52,15 @@ class CatEdit extends Component{
                         name="name"
                         onChange={ this.handleChange }
                         value={ this.state.form.name }
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Location</Label>
+                        <Input
+                        type="text"
+                        name="story"
+                        onChange={ this.handleChange }
+                        value={ this.state.form.story }
                         />
                     </FormGroup>
                     <FormGroup>
@@ -72,15 +82,6 @@ class CatEdit extends Component{
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label>Story</Label>
-                        <Input
-                        type="text"
-                        name="story"
-                        onChange={ this.handleChange }
-                        value={ this.state.form.story }
-                        />
-                    </FormGroup>
-                    <FormGroup>
                         <Label>Image</Label>
                         <Input
                         type="text"
@@ -93,13 +94,14 @@ class CatEdit extends Component{
                         name="submit"
                         color="secondary"
                         onClick={ this.handleSubmit }
+                        style={{ borderColor:'#EEF2F7'}} 
                         >
                             Edit profile
                     </Button>
                 </Form>
                 <Footer/>
                 { this.state.success && <Redirect to={ `/catshow/${this.props.cat.id}` }/> }
-            </React.Fragment>
+            </>
         )
     }
 }
