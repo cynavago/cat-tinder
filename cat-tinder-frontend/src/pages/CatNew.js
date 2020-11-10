@@ -43,7 +43,8 @@ class CatNew extends Component{
     render(){
         return(
             <React.Fragment>
-                <Form>
+               <h2 className="h2-title" style={{display:'flex', justifyContent:'center'}}>Create a new profile</h2>
+                <Form className="form">
                     <FormGroup>
                         <Label>Name</Label>
                         <Input
@@ -51,6 +52,15 @@ class CatNew extends Component{
                         name="name"
                         onChange={ this.handleChange }
                         value={ this.state.form.name }
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Location</Label>
+                        <Input
+                        type="text"
+                        name="story"
+                        onChange={ this.handleChange }
+                        value={ this.state.form.story }
                         />
                     </FormGroup>
                     <FormGroup>
@@ -72,15 +82,6 @@ class CatNew extends Component{
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label>Story</Label>
-                        <Input
-                        type="text"
-                        name="story"
-                        onChange={ this.handleChange }
-                        value={ this.state.form.story }
-                        />
-                    </FormGroup>
-                    <FormGroup>
                         <Label>Image</Label>
                         <Input
                         type="text"
@@ -93,6 +94,7 @@ class CatNew extends Component{
                         name="submit"
                         color="secondary"
                         onClick={ this.handleSubmit }
+                        style={{ borderColor:'#EEF2F7'}} 
                     >
                         Create a Cat
                     </Button>
@@ -104,3 +106,4 @@ class CatNew extends Component{
     }
 }
 export default CatNew
+

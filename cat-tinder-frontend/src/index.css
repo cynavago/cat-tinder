@@ -1,17 +1,18 @@
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .btn{
-  outline: none;
+  outline: none !important;
 }
 
-.btn-primary{
-  border-radius: 3rem;
+.btn-secondary{
   background-image: linear-gradient(30deg, #f1645a, #ee3f91);
-  outline: none;
+  outline: none !important;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+}
+
+
+.btn-text{
   color: white;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -19,8 +20,69 @@ code {
   font-weight: bold;
 }
 
+.card-shadow {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.048),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.048)
+;
+
+  background: white;
+  border-radius: 3px;
+}
+
 .container{
   background-image: url("/assets/hero-bg.jpg");
+}
+
+.footer-bg{
+  height: 47vh;
+  background: #32343d;
+}
+
+.footer-title{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: white;
+  padding-top: 10%;
+  padding-left: 11%;
+}
+
+.footer-copy{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  color: white;
+  padding-bottom: 1%;
+  padding-left: 11%;
+  width: 80%;
+}
+
+.footer-links{
+  font-family: 'Open Sans', sans-serif;
+  font-size: .5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.footer-links-text{
+  padding: 2%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 1.3rem;
+}
+
+.form{
+  width: 30%;
+  justify-content: center;
+  margin: auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .h2-title{
@@ -28,14 +90,17 @@ code {
   font-size: 2.3rem;
 }
 
+.hero{
+  width: 80%;
+}
+
 .hero-copy{
   padding-left: 5%;
 }
 
 .hero-image{
-  height: 70vh;
   float: right;
-  padding-right: 7%;
+  padding-right: 12%;
 }
 
 .hero-title{
@@ -55,27 +120,22 @@ code {
 
 .index-cards{
   width: 80%;
-  padding: 10%;
   margin: auto;
+  color: red;
+  background-color: red;
 }
 
 .index-text{
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  padding-bottom: 5%;
+  text-align: left;
+  font-size: 1.2rem;
 }
 
+
 .index-title{
-  font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding-top: 9%;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
+  text-align: left;
 }
 
 .jumbotron{
@@ -86,6 +146,10 @@ code {
 
 .jumbotron-bg{
   background-image: url("/assets/hero-bg.jpg");
+}
+
+.navbar-bg{
+  background: #EEF2F7;
 }
 
 .navbar-left{
@@ -103,8 +167,15 @@ code {
   padding-right: 5%;
 }
 
+.show-title{
+  font-weight: 700;
+  font-size: 2.2rem;
+  padding-top: 5%;
+  text-align: left;
+}
 
-
-
-
-
+@media only screen and (min-width: 600px) {
+  form {
+    width: 50%;
+  }
+}

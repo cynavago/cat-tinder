@@ -103,8 +103,14 @@ class App extends Component {
 
   // lifecycle method 2
   render(){
-    // console.log(this.state.cats)
-    console.log("Create New Cat:", this.createNewCat)
+    const {
+      logged_in,
+      sign_in_route,
+      sign_out_route,
+      current_user
+    } = this.props
+  
+    console.log("current_user:", current_user);
     return (
       <React.Fragment>
         <Router>

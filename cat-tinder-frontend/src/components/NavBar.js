@@ -42,7 +42,7 @@ class NavBar extends Component {
     render(){
         return(
             <React.Fragment>
-                <Navbar color="light" light expand="md">
+                <Navbar className="navbar-bg" light expand="md">
                     <NavbarBrand className="navbar-left" href="/">
                         <Media className="logo" src={image} alt="Meow and Furever logo" />
                     </NavbarBrand>
