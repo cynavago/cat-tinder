@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
 import {
-    Button,
-    Card,
-    CardImg,
-    NavItem,
-    Nav,
-    Navbar,
-    NavLink,
     Container,
     Row,
-    Col,
-    Collapse,
-    UncontrolledTooltip
+    Col
   } from "reactstrap";
 // import { NavLink } from 'react-router-dom';
 class Footer extends Component{

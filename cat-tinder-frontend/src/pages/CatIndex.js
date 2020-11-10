@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 // import CatCard from '../components/CatCard.js'
 import {
-    Card, Button, CardImg, CardTitle, CardText, CardDeck,
-    CardSubtitle, CardBody, Row, Col, Container } from 'reactstrap';
+    Card, Button, CardImg, CardTitle, Row, Col, Container } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import '../App.css';
 
 class CatIndex extends Component{
+    // constructor(props){
+    //     super(props)
+    //         this.state = {
+    //         success: false,
+    //         image: false
+    //     }
+    // }
+
+    // catMatch = () => {
+    //     // map through faveCats array
+    //     // console.log();
+    //     if (this.props.faveCats.map(value => value === this.props.cat.id)){
+    //         this.setState({ image: true })
+    //     } else {
+    //         this.setState({ image: false })
+    //     }
+    //     this.setState({ success: true })
+    //     // console.log(test);
+    //     // return this.props.faveCats
+    // }
+
     render(){
         return(
             <>
@@ -17,7 +36,7 @@ class CatIndex extends Component{
             <h2 className="h2-title" style={{display:'flex', justifyContent:'center'}}>Meet the Cats!</h2>
                 <br/>
                 <Container classname="index-cards">
-                    <Row xs="1" sm="2" md="3" lg="4">
+                    <Row xs="1" sm="2" md="3" lg="3">
                         {this.props.cats.map((cat, index) =>{
                         return(
                         <Col style={{padding:"1.5%", margin:"auto"}}>
@@ -34,7 +53,7 @@ class CatIndex extends Component{
                         })}
                     </Row>
                 </Container>
-
+                <br></br><br></br>   
                 <Footer />
             </div>
             </>
